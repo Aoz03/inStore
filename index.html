@@ -19,6 +19,12 @@
         justify-content: center; /* Yatay eksende ortalamak için */
       }
 
+      /* Kartların genişliğini ayarla */
+      .card {
+        width: 18rem;
+        margin-bottom: 20px;
+      }
+
       /* Mobil cihazlar için stil ayarları */
       @media (max-width: 991px) {
         /* Navbar arkaplan rengini tam ekran yap */
@@ -48,12 +54,11 @@
           margin-right: 0;
         }
 
-        /* Kartların genişliğini tam ekran yap */
+        /* Kartların genişliğini ayarla */
         .card {
           width: calc(
-            100% / 2 - 20px
+            50% - 20px
           ); /* Mobil cihazlarda iki sütun olacak şekilde ayarla */
-          margin-bottom: 20px;
         }
 
         /* Kart içeriğinin boyutunu küçült */
@@ -65,10 +70,15 @@
       /* Ekran çözünürlüğü 550px altında */
       @media (max-width: 550px) {
         /* Container'ın genişliğini tam ekran yap */
-        #cardContainer .card {
+        #cardContainer {
+          width: 100%;
+        }
+
+        /* Kartların genişliğini tam ekran yap */
+        .card {
           width: calc(
             100% - 20px
-          ); /* Kenar boşlukları da dahil olacak şekilde */
+          ); /* Kenar boşluklarını da dikkate alarak ayarla */
         }
       }
     </style>
@@ -159,16 +169,17 @@
         />
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form>
-      <br /><br /><br />
+      <br /><br />
+      <br />
       <div class="container" id="cardContainer">
-        <div class="card" style="width: 18rem">
+        <div class="card">
           <img id="searchImage" src="" alt="" />
           <div class="card-body">
             <p class="card-text">Artikel no : <span id="searchValue"></span></p>
             <p><a id="dynamicLink1" href="#">Pia Facts</a></p>
           </div>
         </div>
-        <div class="card" style="width: 18rem">
+        <div class="card">
           <div class="card-body">
             <p class="card-text">
               Ürün Numarası: <span id="productNumber"></span>
